@@ -6,6 +6,7 @@
     "test": "node --test tests/",
     "e2e": "python3 tests/e2e.py",
     "audio": "python3 tools/gen-audio.py",
-    "icons": "python3 tools/gen-icons.py"
+    "icons": "python3 tools/gen-icons.py",
+    "e2e:transfer": "python3 tests/e2e_transfer.py"
   }
 }

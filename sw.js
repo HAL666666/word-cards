@@ -1,8 +1,8 @@
 /* ことばアルバム service worker — アプリ本体をキャッシュしてオフライン動作。
    本体を変えたら CACHE の番号を上げる。写真・音声（media/）は別キャッシュで、版を上げても消さない。 */
-const CACHE = 'wordcards-shell-v1';
+const CACHE = 'wordcards-shell-v2';
 const MEDIA = 'wordcards-media-v1';
-const SHELL = ['./', './index.html', './css/style.css', './js/core.js', './js/db.js', './js/speech.js', './js/app.js',
+const SHELL = ['./', './index.html', './css/style.css', './js/core.js', './js/db.js', './js/speech.js', './js/transfer.js', './js/app.js',
   './cards.json', './manifest.json', './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'];
 
 self.addEventListener('install', (e) => { e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting())); });

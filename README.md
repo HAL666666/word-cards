@@ -46,3 +46,11 @@ IndexedDB `word-cards-db`（cards / videos / progress / media / meta）。バー
 - `npm test` … node のユニットテスト（core ロジック・cards.json・SW/manifest/DB）
 - `npm run e2e` … ヘッドレス Chrome 390×844 で一通り操作し `screens/` を撮る
 - 本体を変えたら `sw.js` の `CACHE` の番号を上げる（media は別キャッシュ）
+
+## 引っ越し（機種変更）用：データを書き出す／データを読み込む
+
+おとなメニュー →「📦 引っ越し（機種変更）」。
+
+- **データを書き出す**：IndexedDB の全部（カード・ビデオ・おぼえた記録・自分で撮った写真/録音（Base64）・設定）を `kotoba-album-all-v2-YYYY-MM-DD.json` 1つに。iPhone は共有シート（「"ファイル"に保存」や Google ドライブ）、そのほかはダウンロード。共有できなかったときは画面に保存リンクが出ます。
+- **データを読み込む**：`app: "kotoba-album"` と版（v2 まで）を確認 → 件数を見せて確認 → **置き換え（既定）** か 統合。1つのトランザクションで書くので、途中で失敗しても今のデータはそのまま。以前の `word-cards-backup`（v1）は統合で読みます。
+- テスト：`npm test`（tests/transfer.test.js）と `python3 tests/e2e_transfer.py`

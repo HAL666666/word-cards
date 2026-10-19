@@ -1,7 +1,7 @@
 /* ことばアルバム — 画面とうごき */
 (function () {
   'use strict';
-  const APP_VERSION = '1.0.0';
+  const APP_VERSION = '1.1.0';
   const MEDIA_CACHE = 'wordcards-media-v1';
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
@@ -574,6 +574,15 @@
         <button class="btn" id="s-export">📤 バックアップを 書き出す</button>
         <p class="fine">最終書き出し：${lastExp ? new Date(lastExp).toLocaleString('ja-JP') : 'まだありません'}（写真も入ります）</p>
       </section>
+      <section class="set" id="s-transfer"><h3>📦 引っ越し（機種変更）</h3>
+        <p class="fine">カード・自分で撮った写真や録音・おぼえた記録・設定を ぜんぶ 1つのファイルにします。iPhone では共有メニューから「"ファイル"に保存」か Google ドライブへ。</p>
+        <button class="btn primary big" id="s-export-all">📤 データを書き出す</button>
+        <label class="btn big">📥 データを読み込む<input type="file" accept="application/json,.json" hidden id="s-import-all"></label>
+        <label class="tog"><span>読み込み方：置き換え（おすすめ）</span><input type="radio" name="s-import-mode" value="replace" checked><i></i></label>
+        <label class="tog"><span>読み込み方：統合（今のカードも残す）</span><input type="radio" name="s-import-mode" value="merge"><i></i></label>
+        <div id="s-transfer-status" class="fine"></div>
+        <p class="fine">読み込む前に 中身を確認します。失敗しても 今のデータは 消えません。</p>
+      </section>
       <section class="set"><h3>👀 ひょうじする ことば</h3>
         <p class="fine">えいごは いつも ひょうじ</p>
         ${tog('kana', 'えいごの よみかた（ひらがな）')}${tog('ja', 'にほんご 🇯🇵')}${tog('zh', 'ちゅうごくご 🇹🇼')}${tog('pinyin', 'ピンイン')}
@@ -604,6 +613,7 @@
     $('#s-sync').onclick = async () => { $('#s-sync').disabled = true; await syncRepo(); renderSettings(); };
     $('#s-import').onchange = (e) => { const f = e.target.files[0]; if (f) importFile(f); };
     $('#s-export').onclick = exportBackup;
+    if (window.Transfer) Transfer.bind({ DB, toast, legacyImport: importFile });
     const ps = $('#s-persist'); if (ps) ps.onclick = async () => { const ok = await requestPersist(); toast(ok ? 'データ保護 ON' : 'ブラウザが ことわりました'); renderSettings(); };
     $('#s-reset').onclick = async () => { if (!confirm('おぼえた記録（⭐）を ぜんぶ けしますか？ カードは のこります。')) return; await DB.clear('progress'); S.prog = new Map(); toast('リセットしました'); };
   }
