@@ -6,7 +6,7 @@ from pathlib import Path
 from playwright.async_api import async_playwright
 
 ROOT = Path(__file__).resolve().parent.parent
-SHOTS = ROOT / "screens"; SHOTS.mkdir(exist_ok=True)
+SHOTS = Path(os.environ.get("SHOTS", ROOT / "screens")); SHOTS.mkdir(parents=True, exist_ok=True)
 PORT = int(os.environ.get("PORT", 18733))
 BASE = os.environ.get("BASE", f"http://127.0.0.1:{PORT}/")
 CHROME = "/usr/bin/google-chrome"
@@ -128,7 +128,6 @@ async def main():
             bk = json.loads(Path(pth).read_text())
             hc = [c for c in bk["cards"] if c["id"] == "honey"][0]
             ok("バックアップ：形式・写真入り・記録入り", bk["format"] == "word-cards-backup" and hc["image"].startswith("data:image/") and len(bk["progress"]) >= 3 and len(bk["cards"]) == 5)
-            (SHOTS.parent / "tests/fixtures").mkdir(exist_ok=True)
 
             # 設定：ことばを隠す
             await pg.goto(BASE + "#settings"); await pg.wait_for_selector("[data-show=zh]", state="attached")
