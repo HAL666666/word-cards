@@ -1,0 +1,11 @@
+{
+  "name": "word-cards",
+  "private": true,
+  "description": "ことばアルバム — 家族のYouTube Shortsから作る、子ども向け単語カードPWA",
+  "scripts": {
+    "test": "node --test tests/",
+    "e2e": "python3 tests/e2e.py",
+    "audio": "python3 tools/gen-audio.py",
+    "icons": "python3 tools/gen-icons.py"
+  }
+}

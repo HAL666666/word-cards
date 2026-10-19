@@ -1,0 +1,70 @@
+{
+  "format": "word-cards",
+  "version": 1,
+  "updated": "2026-10-20",
+  "videos": [
+    {
+      "id": "cebu-2026-08",
+      "title": "【セブ島】ボートのすぐ横にジンベエザメ！🐋",
+      "date": "2026-08-23",
+      "place": "Oslob / SM Seaside City, Cebu",
+      "url": "",
+      "emoji": "🏝️"
+    }
+  ],
+  "cards": [
+    {
+      "id": "whale-shark",
+      "video": "cebu-2026-08",
+      "en": "whale shark",
+      "kana": "ほえーる しゃーく",
+      "ja": "じんべえざめ",
+      "zh": "鯨鯊",
+      "pinyin": "jīng shā",
+      "image": "media/img/whale-shark.jpg",
+      "audio": {
+        "en": "media/audio/whale-shark.en.mp3",
+        "ja": "media/audio/whale-shark.ja.mp3",
+        "zh": "media/audio/whale-shark.zh.mp3"
+      },
+      "at": 5.0,
+      "note": "Look! A whale shark!",
+      "rev": 1
+    },
+    {
+      "id": "penguin",
+      "video": "cebu-2026-08",
+      "en": "penguin",
+      "kana": "ぺんぎん",
+      "ja": "ぺんぎん",
+      "zh": "企鵝",
+      "pinyin": "qì é",
+      "image": "media/img/penguin.jpg",
+      "audio": {
+        "en": "media/audio/penguin.en.mp3",
+        "ja": "media/audio/penguin.ja.mp3",
+        "zh": "media/audio/penguin.zh.mp3"
+      },
+      "at": 40.7,
+      "note": "It gave me a hug!",
+      "rev": 1
+    },
+    {
+      "id": "its-yummy",
+      "video": "cebu-2026-08",
+      "en": "It's yummy!",
+      "kana": "いっつ やみー",
+      "ja": "おいしい！",
+      "zh": "好好吃！",
+      "pinyin": "hǎo hǎo chī",
+      "image": "media/img/its-yummy.svg",
+      "audio": {
+        "en": "media/audio/its-yummy.en.mp3",
+        "ja": "media/audio/its-yummy.ja.mp3",
+        "zh": "media/audio/its-yummy.zh.mp3"
+      },
+      "note": "Hungry penguin, hungry!",
+      "rev": 1
+    }
+  ]
+}

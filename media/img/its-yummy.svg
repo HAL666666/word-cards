@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="#FFF6D6"/><stop offset="1" stop-color="#FFD9A8"/></radialGradient>
+  </defs>
+  <rect width="640" height="640" fill="url(#bg)"/>
+  <g fill="#FFB703" opacity=".55">
+    <path d="M90 120l10 26 26 10-26 10-10 26-10-26-26-10 26-10z"/>
+    <path d="M540 170l8 20 20 8-20 8-8 20-8-20-20-8 20-8z"/>
+    <path d="M520 470l7 17 17 7-17 7-7 17-7-17-17-7 17-7z"/>
+    <path d="M110 470l6 15 15 6-15 6-6 15-6-15-15-6 15-6z"/>
+  </g>
+  <!-- cone -->
+  <path d="M230 330 L410 330 L320 590 Z" fill="#E9A15B" stroke="#B86B2B" stroke-width="8" stroke-linejoin="round"/>
+  <g stroke="#B86B2B" stroke-width="6" opacity=".6">
+    <path d="M262 360 L380 480"/><path d="M300 340 L392 432"/><path d="M250 400 L350 500"/>
+    <path d="M378 360 L260 480"/><path d="M340 340 L248 432"/><path d="M390 400 L290 500"/>
+  </g>
+  <!-- scoops -->
+  <circle cx="320" cy="300" r="120" fill="#FF8FB1" stroke="#E0607F" stroke-width="8"/>
+  <circle cx="320" cy="190" r="92" fill="#FFF3E0" stroke="#E8C9A0" stroke-width="8"/>
+  <circle cx="320" cy="98" r="22" fill="#E63946"/>
+  <path d="M322 78 q14 -30 34 -34" fill="none" stroke="#2D6A4F" stroke-width="6" stroke-linecap="round"/>
+  <!-- sprinkles -->
+  <g stroke-width="9" stroke-linecap="round">
+    <path d="M270 160 l14 -8" stroke="#4CC9F0"/><path d="M360 150 l10 12" stroke="#F72585"/>
+    <path d="M300 230 l-12 8" stroke="#FFB703"/><path d="M372 220 l14 4" stroke="#7209B7"/>
+    <path d="M330 140 l2 14" stroke="#06D6A0"/>
+  </g>
+  <!-- happy face on pink scoop -->
+  <path d="M262 290 q16 -18 32 0" fill="none" stroke="#5A2A3A" stroke-width="9" stroke-linecap="round"/>
+  <path d="M346 290 q16 -18 32 0" fill="none" stroke="#5A2A3A" stroke-width="9" stroke-linecap="round"/>
+  <ellipse cx="250" cy="322" rx="20" ry="12" fill="#FF5C8A" opacity=".6"/>
+  <ellipse cx="390" cy="322" rx="20" ry="12" fill="#FF5C8A" opacity=".6"/>
+  <path d="M286 318 q34 44 68 0 z" fill="#5A2A3A"/>
+  <path d="M304 336 q16 14 32 0" fill="#FF6B81"/>
+  <!-- licking tongue drip -->
+  <path d="M410 330 q6 30 -6 40 q-12 -10 -6 -40" fill="#FF8FB1"/>
+</svg>
