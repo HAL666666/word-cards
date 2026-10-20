@@ -36,6 +36,9 @@
 }
 ```
 必須は `en` だけ。`id` を省くと英語から作ります。`at` は動画の何秒目か（YouTube リンクに `t=` をつける）。
+
+`also`（任意）は同じことばが出てくる ほかの Short：`[{"video": "s20-egg-icecream", "at": 41.0}]`。カード画面に「ほかの ビデオにも でてくるよ」として出ます。`python3 tools/gen-also.py` で Shorts の catalog（word / word2）から自動で作ります（変わったカードは rev +1）。
+方針：`video` は「そのことばがいちばん分かりやすい Short」（最初に出た Short とはかぎらない）。同じことばが複数の Short に出るのは OK（`also` に入る）。メインの付け替えは人が決めて cards.json を直す。
 `image` / `audio` は相対パス・https・`data:` URL（JSON ファイル読み込み時）が使えます。
 
 ## データ

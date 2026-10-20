@@ -180,6 +180,13 @@
       say(c, b.dataset.lang);
     }));
   }
+  /* ほかの ビデオにも でてくるよ（cards.json の also。videos にあるものだけ） */
+  function alsoHTML(c) {
+    const list = (c.also || []).map((a) => ({ a, v: S.videos.get(a.video) })).filter((x) => x.v && x.a.video !== c.video);
+    if (!list.length) return '';
+    return `<div class="also"><small>ほかの ビデオにも でてくるよ</small><ul>${list.map(({ a, v }) =>
+      `<li><span>${esc(v.emoji || '🎬')}</span><b>${esc(v.title)}</b>${v.url ? `<a class="pill yt" href="${esc(ytAt(v.url, a.at))}" target="_blank" rel="noopener">▶ みる</a>` : ''}</li>`).join('')}</ul></div>`;
+  }
   function renderCard(id) {
     const c = S.cards.find((x) => x.id === id);
     if (!c) { location.replace('#list'); return; }
@@ -190,6 +197,7 @@
       <div class="says">${sayBtn(c, 'en', true)}${sayBtn(c, 'ja')}${sayBtn(c, 'zh')}</div>
       ${c.note ? `<button class="note" id="note-say">💬 ${esc(c.note)}</button>` : ''}
       ${v ? `<div class="from"><span>${esc(v.emoji || '🎬')}</span><div><small>この ビデオで みたよ</small><b>${esc(v.title)}</b><small>${esc(WC.fmtDate(v.date))}</small></div>${v.url ? `<a class="pill yt" href="${esc(ytAt(v.url, c.at))}" target="_blank" rel="noopener">▶ みる</a>` : ''}</div>` : ''}
+      ${alsoHTML(c)}
       <div class="row center"><a class="btn" href="#flash/${encodeURIComponent(c.video || '-')}">🃏 めくる</a><button class="hold btn ghost" data-href="#edit/${encodeURIComponent(c.id)}"><span class="ring"></span>✏️ なおす</button></div>`;
     bindSay($('#v-card'), c);
     bindHold($('#v-card'));

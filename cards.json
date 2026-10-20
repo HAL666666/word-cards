@@ -329,7 +329,8 @@
     },
     {
       "id": "its-yummy",
-      "video": "s20-egg-icecream",
+      "video": "s03-choco-banana",
+      "at": 46.2,
       "en": "It's yummy!",
       "kana": "いっつ やみー",
       "ja": "おいしい！",
@@ -341,8 +342,14 @@
         "ja": "media/audio/its-yummy.ja.mp3",
         "zh": "media/audio/its-yummy.zh.mp3"
       },
-      "note": "おいしいものを食べたときのことば。 Short #20（たまごやきとソフトクリーム）",
-      "rev": 3
+      "note": "おいしいものを食べたときのことば。 Short #03（チョコバナナ）",
+      "rev": 4,
+      "also": [
+        {
+          "video": "s20-egg-icecream",
+          "at": 41.0
+        }
+      ]
     },
     {
       "id": "chocolate-banana",

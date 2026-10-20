@@ -148,3 +148,22 @@ test('toRepoCard: 端末だけの項目をはずす', () => {
   const o = WC.toRepoCard({ id: 'a', en: 'a', ja: '', audio: {}, source: 'user', edited: true, updatedAt: 5, image: 'media/img/a.jpg' });
   assert.deepEqual(o, { id: 'a', en: 'a', image: 'media/img/a.jpg', rev: 1 });
 });
+
+test('also：ほかの Short へのリンク（正規化・cards.json の整合）', () => {
+  const n = WC.normalizeCard({ en: 'x', video: 'a', also: [{ video: 'b', at: '12.5' }, { video: 'a', at: 1 }, { video: 'b' }, 'c', { at: 3 }, null] });
+  assert.deepEqual(n.also, [{ video: 'b', at: 12.5 }, { video: 'c', at: null }]);
+  assert.deepEqual(WC.normalizeCard({ en: 'x' }).also, []);
+  assert.deepEqual(WC.toRepoCard({ ...n, rev: 1 }).also, [{ video: 'b', at: 12.5 }, { video: 'c' }]);
+  assert.equal('also' in WC.toRepoCard(WC.normalizeCard({ en: 'y' })), false);
+  const r = WC.parseCardsFile(JSON.parse(fs.readFileSync(path.join(ROOT, 'cards.json'), 'utf8')));
+  const vids = new Set(r.videos.map((v) => v.id));
+  for (const c of r.cards) for (const a of c.also) {
+    assert.ok(vids.has(a.video), `${c.id}: also ${a.video} が videos にない`);
+    assert.notEqual(a.video, c.video, `${c.id}: also にメインと同じ video`);
+  }
+  const y = r.cards.find((c) => c.id === 'its-yummy');
+  assert.equal(y.video, 's03-choco-banana');
+  assert.equal(y.at, 46.2);
+  assert.ok(y.rev >= 4, 'its-yummy は rev を上げて端末にも反映');
+  assert.ok(y.also.some((a) => a.video === 's20-egg-icecream'), 'its-yummy は #20 にも出てくる');
+});

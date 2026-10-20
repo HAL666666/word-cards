@@ -9,6 +9,9 @@ ROOT = Path(__file__).resolve().parent.parent
 SHOTS = Path(os.environ.get("SHOTS", ROOT / "screens")); SHOTS.mkdir(parents=True, exist_ok=True)
 PORT = int(os.environ.get("PORT", 18733))
 BASE = os.environ.get("BASE", f"http://127.0.0.1:{PORT}/")
+_REPO = json.loads((ROOT / "cards.json").read_text(encoding="utf-8"))
+NC = len(_REPO["cards"]); NV = len({c["video"] for c in _REPO["cards"]})
+VT = {v["id"]: v["title"] for v in _REPO["videos"]}
 CHROME = "/usr/bin/google-chrome"
 results, errors = [], []
 
@@ -33,9 +36,9 @@ async def main():
 
             await pg.goto(BASE)
             await pg.wait_for_selector(".tiles")
-            await pg.wait_for_function("window.__app && window.__app.S.cards.length >= 36")
+            await pg.wait_for_function(f"window.__app && window.__app.S.cards.length >= {NC}")
             n = await pg.evaluate("__app.S.cards.length")
-            ok("初回起動で cards.json の36まいが入る", n == 36, f"{n}まい")
+            ok(f"初回起動で cards.json の{NC}まいが入る", n == NC, f"{n}まい")
             await pg.wait_for_timeout(300); await shot("01-home")
 
             # 長おしで おとなメニュー
@@ -48,7 +51,7 @@ async def main():
             ok("おとなボタンは タップだけでは開かない", "settings" not in pg.url)
 
             await pg.goto(BASE + "#list"); await pg.wait_for_selector(".ctile")
-            ok("一覧：ビデオごとにまとまる", await pg.locator(".vgroup").count() == 35 and await pg.locator(".ctile").count() == 36)
+            ok("一覧：ビデオごとにまとまる", await pg.locator(".vgroup").count() == NV and await pg.locator(".ctile").count() == NC)
             await pg.wait_for_timeout(400); await shot("02-list")
 
             await pg.goto(BASE + "#card/whale-shark"); await pg.wait_for_selector(".say.big")
@@ -57,6 +60,13 @@ async def main():
             how = await pg.evaluate("Speech.say(__app.S.cards.find(c=>c.id==='whale-shark'),'zh',1)")
             ok("付属カードは mp3 で再生", how == "mp3", how)
             await pg.wait_for_timeout(300); await shot("03-card")
+
+            # also：ほかの Short へのリンク（its-yummy はメイン #03、#20 にも）
+            await pg.goto(BASE + "#card/its-yummy"); await pg.wait_for_selector(".say.big")
+            t = await pg.inner_text("#v-card")
+            ok("カード：ほかの ビデオにも でてくるよ", VT["s03-choco-banana"] in t and "ほかの ビデオにも でてくるよ" in t and VT["s20-egg-icecream"] in t
+               and await pg.locator(".also li").count() == 1)
+            await pg.wait_for_timeout(300); await shot("19-card-also")
 
             # めくる
             await pg.goto(BASE + "#flash/s05-cebu-whale"); await pg.wait_for_selector("#flip")
@@ -128,7 +138,7 @@ async def main():
             d = await dl.value; pth = await d.path()
             bk = json.loads(Path(pth).read_text())
             hc = [c for c in bk["cards"] if c["id"] == "honey"][0]
-            ok("バックアップ：形式・写真入り・記録入り", bk["format"] == "word-cards-backup" and hc["image"].startswith("data:image/") and len(bk["progress"]) >= 3 and len(bk["cards"]) == 38)
+            ok("バックアップ：形式・写真入り・記録入り", bk["format"] == "word-cards-backup" and hc["image"].startswith("data:image/") and len(bk["progress"]) >= 3 and len(bk["cards"]) == NC + 2)
 
             # 設定：ことばを隠す
             await pg.goto(BASE + "#settings"); await pg.wait_for_selector("[data-show=zh]", state="attached")
@@ -149,7 +159,7 @@ async def main():
             await ctx.set_offline(True)
             await pg.goto(BASE + "#list"); await pg.wait_for_selector(".ctile", timeout=8000)
             imgs_ok = await pg.evaluate("Promise.all([...document.querySelectorAll('.ctile img')].slice(0, 6).map(i=>i.decode().then(()=>i.naturalWidth>0).catch(()=>false)))")
-            ok("オフラインで一覧と写真が出る", await pg.locator(".ctile").count() == 38 and all(imgs_ok), str(imgs_ok))
+            ok("オフラインで一覧と写真が出る", await pg.locator(".ctile").count() == NC + 2 and all(imgs_ok), str(imgs_ok))
             how = await pg.evaluate("Speech.say(__app.S.cards.find(c=>c.id==='penguin'),'en',1)")
             ok("オフラインでも mp3 再生", how == "mp3", how)
             await shot("15-offline-list")

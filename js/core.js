@@ -60,6 +60,21 @@
     return errors;
   }
 
+  /* also：同じことばが出てくる ほかの Short（[{video, at}]）。メインの video と重複は除く */
+  function normalizeAlso(list, mainVideo) {
+    if (!Array.isArray(list)) return [];
+    const seen = new Set([mainVideo || '']); const out = [];
+    for (const a of list) {
+      const video = str(a && (typeof a === 'string' ? a : a.video), 80);
+      if (!video || seen.has(video)) continue;
+      seen.add(video);
+      const at = a && typeof a === 'object' && a.at !== '' && a.at != null && Number.isFinite(+a.at) ? +a.at : null;
+      out.push({ video, at });
+      if (out.length >= 20) break;
+    }
+    return out;
+  }
+
   function normalizeCard(c, opts = {}) {
     const audio = {};
     for (const l of LANGS) { const a = safeRef(c.audio && c.audio[l], 'audio'); if (a) audio[l] = a; }
@@ -71,6 +86,7 @@
       image: safeRef(c.image, 'image'), emoji: str(c.emoji, 8),
       audio, note: str(c.note, 300),
       at: Number.isFinite(+c.at) && c.at !== '' && c.at != null ? +c.at : null,
+      also: normalizeAlso(c.also, str(c.video, 80)),
       rev: Number.isFinite(+c.rev) ? +c.rev : 0,
       source: opts.source || str(c.source, 20) || 'user',
       edited: !!c.edited, deleted: !!c.deleted,
@@ -235,6 +251,7 @@
   function toRepoCard(c) {
     const o = { id: c.id, video: c.video, en: c.en, kana: c.kana, ja: c.ja, zh: c.zh, pinyin: c.pinyin, image: c.image, audio: c.audio, note: c.note, rev: c.rev || 1 };
     if (c.at != null) o.at = c.at;
+    if (c.also && c.also.length) o.also = c.also.map((a) => (a.at != null ? { video: a.video, at: a.at } : { video: a.video }));
     if (c.emoji) o.emoji = c.emoji;
     for (const k of Object.keys(o)) if (o[k] === '' || o[k] == null || (typeof o[k] === 'object' && !Object.keys(o[k]).length)) delete o[k];
     return o;
@@ -246,7 +263,7 @@
   }
 
   return {
-    LANGS, INTERVALS, MAX_BOX, DAY, slug, makeId, safeRef, isYouTubeUrl, normalizeVideo, validateCard, normalizeCard,
+    LANGS, INTERVALS, MAX_BOX, DAY, slug, makeId, safeRef, isYouTubeUrl, normalizeVideo, validateCard, normalizeCard, normalizeAlso,
     parseCardsFile, mergeCards, mergeVideos, normalizeProgress, newProgress, grade, isDue, sessionOrder, stars,
     rng32, shuffle, makeQuestion, makeRound, roundStars, buildBackup, toRepoCard, fmtDate,
   };
