@@ -61,11 +61,11 @@ async def main():
             ok("付属カードは mp3 で再生", how == "mp3", how)
             await pg.wait_for_timeout(300); await shot("03-card")
 
-            # also：ほかの Short へのリンク（its-yummy はメイン #03、#20 にも）
+            # its-yummy はメイン #20 だけ（#03 では言っていない）→ also は出ない
             await pg.goto(BASE + "#card/its-yummy"); await pg.wait_for_selector(".say.big")
             t = await pg.inner_text("#v-card")
-            ok("カード：ほかの ビデオにも でてくるよ", VT["s03-choco-banana"] in t and "ほかの ビデオにも でてくるよ" in t and VT["s20-egg-icecream"] in t
-               and await pg.locator(".also li").count() == 1)
+            ok("カード：its-yummy は #20 にリンク、also なし", VT["s20-egg-icecream"] in t and VT["s03-choco-banana"] not in t
+               and "ほかの ビデオにも でてくるよ" not in t and await pg.locator(".also li").count() == 0)
             await pg.wait_for_timeout(300); await shot("19-card-also")
 
             # めくる

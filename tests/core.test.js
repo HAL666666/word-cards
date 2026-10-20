@@ -11,7 +11,7 @@ test('cards.json は正しい形で、画像・音声ファイルが全部ある
   assert.equal(raw.format, 'word-cards');
   const r = WC.parseCardsFile(raw);
   assert.deepEqual(r.errors, []);
-  assert.equal(r.cards.length, 37);
+  assert.equal(r.cards.length, 39);
   assert.equal(r.videos.length, 36);
   const vids = new Set(r.videos.map((v) => v.id));
   for (const c of r.cards) {
@@ -26,7 +26,7 @@ test('cards.json は正しい形で、画像・音声ファイルが全部ある
     assert.ok(c.pinyin, `${c.id}: pinyin`);
   }
   assert.deepEqual(r.cards.slice(0, 3).map((c) => c.en), ['whale shark', 'penguin', "It's yummy!"]);
-  assert.equal(new Set(r.cards.map((c) => c.id)).size, 37);
+  assert.equal(new Set(r.cards.map((c) => c.id)).size, 39);
   for (const v of r.videos) {
     assert.equal(v.url, '', `${v.id}: まだ公開していないので url は空`);
     assert.ok(!/itabashi|toda|warabi|板橋|戸田|蕨/i.test(JSON.stringify(v)), `${v.id}: 地名`);
@@ -162,8 +162,10 @@ test('also：ほかの Short へのリンク（正規化・cards.json の整合�
     assert.notEqual(a.video, c.video, `${c.id}: also にメインと同じ video`);
   }
   const y = r.cards.find((c) => c.id === 'its-yummy');
-  assert.equal(y.video, 's03-choco-banana');
-  assert.equal(y.at, 46.2);
-  assert.ok(y.rev >= 4, 'its-yummy は rev を上げて端末にも反映');
-  assert.ok(y.also.some((a) => a.video === 's20-egg-icecream'), 'its-yummy は #20 にも出てくる');
+  assert.equal(y.video, 's20-egg-icecream', 'its-yummy は #20（ソフトクリームを食べる）がメイン');
+  assert.equal(y.at, 41.0);
+  assert.ok(y.rev >= 5, 'its-yummy は rev を上げて端末にも反映');
+  assert.ok(!y.also.some((a) => a.video === 's03-choco-banana'), '#03 では おいしい と言っていないので also に入れない');
+  const s03 = r.cards.filter((c) => c.video === 's03-choco-banana').map((c) => [c.id, c.at]);
+  assert.deepEqual(s03, [['rock-paper-scissors', 17.6], ['chocolate-banana', 22.8], ['can-i-eat-it', 43.9]]);
 });

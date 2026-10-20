@@ -1,7 +1,7 @@
 {
   "format": "word-cards",
   "version": 1,
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "videos": [
     {
       "id": "s01-kizugawa-shadow",
@@ -21,7 +21,7 @@
     },
     {
       "id": "s03-choco-banana",
-      "title": "チョコバナナ",
+      "title": "じゃんけんで チョコバナナ",
       "date": "2026-08-07",
       "place": "Festival",
       "url": "",
@@ -329,8 +329,8 @@
     },
     {
       "id": "its-yummy",
-      "video": "s03-choco-banana",
-      "at": 46.2,
+      "video": "s20-egg-icecream",
+      "at": 41.0,
       "en": "It's yummy!",
       "kana": "いっつ やみー",
       "ja": "おいしい！",
@@ -342,14 +342,26 @@
         "ja": "media/audio/its-yummy.ja.mp3",
         "zh": "media/audio/its-yummy.zh.mp3"
       },
-      "note": "おいしいものを食べたときのことば。 Short #03（チョコバナナ）",
-      "rev": 4,
-      "also": [
-        {
-          "video": "s20-egg-icecream",
-          "at": 41.0
-        }
-      ]
+      "note": "おいしいものを食べたときのことば。 Short #20（たまごやきとソフトクリーム）",
+      "rev": 5
+    },
+    {
+      "id": "rock-paper-scissors",
+      "video": "s03-choco-banana",
+      "at": 17.6,
+      "en": "rock-paper-scissors",
+      "kana": "ろっく ぺーぱー しざーず",
+      "ja": "じゃんけん",
+      "zh": "猜拳",
+      "pinyin": "cāiquán",
+      "image": "media/img/rock-paper-scissors.jpg",
+      "audio": {
+        "en": "media/audio/rock-paper-scissors.en.mp3",
+        "ja": "media/audio/rock-paper-scissors.ja.mp3",
+        "zh": "media/audio/rock-paper-scissors.zh.mp3"
+      },
+      "note": "rock（グー／石頭 shítou）・paper（パー／布 bù）・scissors（チョキ／剪刀 jiǎndāo）。おまつりの やたいで じゃんけんに かったら 2ほん！ Short #03（チョコバナナ）",
+      "rev": 1
     },
     {
       "id": "chocolate-banana",
@@ -366,6 +378,25 @@
         "zh": "media/audio/chocolate-banana.zh.mp3"
       },
       "note": "chocolate（チョコ／巧克力 qiǎokèlì）＋ banana（バナナ／香蕉 xiāngjiāo）。おまつりの屋台の人気もの。Two chocolate bananas, please! Short #03（チョコバナナ）",
+      "rev": 2,
+      "at": 22.8
+    },
+    {
+      "id": "can-i-eat-it",
+      "video": "s03-choco-banana",
+      "at": 43.9,
+      "en": "Can I eat it?",
+      "kana": "きゃん あい いーと いっと？",
+      "ja": "たべていい？",
+      "zh": "可以吃嗎？",
+      "pinyin": "kěyǐ chī ma",
+      "image": "media/img/can-i-eat-it.jpg",
+      "audio": {
+        "en": "media/audio/can-i-eat-it.en.mp3",
+        "ja": "media/audio/can-i-eat-it.ja.mp3",
+        "zh": "media/audio/can-i-eat-it.zh.mp3"
+      },
+      "note": "たべる まえに きく ことば。 Short #03（チョコバナナ）",
       "rev": 1
     },
     {
