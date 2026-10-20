@@ -148,6 +148,14 @@
       "emoji": "🏮"
     },
     {
+      "id": "s20-egg-icecream",
+      "title": "たまごやきとソフトクリーム",
+      "date": "2026-05-08",
+      "place": "Restaurant",
+      "url": "",
+      "emoji": "🍦"
+    },
+    {
       "id": "s21-game-corner",
       "title": "ゲームコーナー",
       "date": "2026-05-16",
@@ -321,7 +329,7 @@
     },
     {
       "id": "its-yummy",
-      "video": "s03-choco-banana",
+      "video": "s20-egg-icecream",
       "en": "It's yummy!",
       "kana": "いっつ やみー",
       "ja": "おいしい！",
@@ -333,8 +341,25 @@
         "ja": "media/audio/its-yummy.ja.mp3",
         "zh": "media/audio/its-yummy.zh.mp3"
       },
-      "note": "おいしいものを食べたときのことば。 Short #03（チョコバナナ）／Short #20（たまごやきとソフトクリーム）",
-      "rev": 2
+      "note": "おいしいものを食べたときのことば。 Short #20（たまごやきとソフトクリーム）",
+      "rev": 3
+    },
+    {
+      "id": "chocolate-banana",
+      "video": "s03-choco-banana",
+      "en": "chocolate banana",
+      "kana": "ちょこれーと ばなな",
+      "ja": "チョコバナナ",
+      "zh": "巧克力香蕉",
+      "pinyin": "qiǎokèlì xiāngjiāo",
+      "image": "media/img/chocolate-banana.jpg",
+      "audio": {
+        "en": "media/audio/chocolate-banana.en.mp3",
+        "ja": "media/audio/chocolate-banana.ja.mp3",
+        "zh": "media/audio/chocolate-banana.zh.mp3"
+      },
+      "note": "chocolate（チョコ／巧克力 qiǎokèlì）＋ banana（バナナ／香蕉 xiāngjiāo）。おまつりの屋台の人気もの。Two chocolate bananas, please! Short #03（チョコバナナ）",
+      "rev": 1
     },
     {
       "id": "look-its-so-big",
