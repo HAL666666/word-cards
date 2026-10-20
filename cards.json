@@ -4,36 +4,307 @@
   "updated": "2026-10-20",
   "videos": [
     {
-      "id": "cebu-2026-08",
-      "title": "【セブ島】ボートのすぐ横にジンベエザメ！🐋",
-      "date": "2026-08-23",
-      "place": "Oslob / SM Seaside City, Cebu",
+      "id": "s01-kizugawa-shadow",
+      "title": "色つきのかげ",
+      "date": "2026-07-24",
+      "place": "Kizugawa Science Museum",
+      "url": "",
+      "emoji": "🔬"
+    },
+    {
+      "id": "s02-kizugawa-pull",
+      "title": "ロープをひっぱれ！",
+      "date": "2026-07-24",
+      "place": "Kizugawa Science Museum",
+      "url": "",
+      "emoji": "🔬"
+    },
+    {
+      "id": "s03-choco-banana",
+      "title": "チョコバナナ",
+      "date": "2026-08-07",
+      "place": "Festival",
+      "url": "",
+      "emoji": "🏮"
+    },
+    {
+      "id": "s04-cebu-sunset",
+      "title": "飛行機の夕やけ",
+      "date": "2026-08-21",
+      "place": "Cebu",
       "url": "",
       "emoji": "🏝️"
+    },
+    {
+      "id": "s05-cebu-whale",
+      "title": "ジンベエザメ、でっかい！",
+      "date": "2026-08-23",
+      "place": "Oslob, Cebu",
+      "url": "",
+      "emoji": "🏝️"
+    },
+    {
+      "id": "s06-cebu-cat",
+      "title": "ねこにエサ",
+      "date": "2026-08-23",
+      "place": "Moalboal, Cebu",
+      "url": "",
+      "emoji": "🏝️"
+    },
+    {
+      "id": "s07-cebu-smoke",
+      "title": "けむりの箱",
+      "date": "2026-08-23",
+      "place": "Moalboal, Cebu",
+      "url": "",
+      "emoji": "🏝️"
+    },
+    {
+      "id": "s08-cebu-fire",
+      "title": "ファイヤーダンス",
+      "date": "2026-08-23",
+      "place": "Cebu",
+      "url": "",
+      "emoji": "🏝️"
+    },
+    {
+      "id": "s09-cebu-fries",
+      "title": "フライドポテト",
+      "date": "2026-08-24",
+      "place": "Cebu",
+      "url": "",
+      "emoji": "🏝️"
+    },
+    {
+      "id": "s10-cebu-fort",
+      "title": "とりでだ！",
+      "date": "2026-08-25",
+      "place": "Cebu City",
+      "url": "",
+      "emoji": "🏝️"
+    },
+    {
+      "id": "s11-cebu-penguin",
+      "title": "ペンギンとハグ",
+      "date": "2026-08-25",
+      "place": "Cebu",
+      "url": "",
+      "emoji": "🏝️"
+    },
+    {
+      "id": "s12-cebu-cake",
+      "title": "オレオケーキ",
+      "date": "2026-08-27",
+      "place": "Cebu",
+      "url": "",
+      "emoji": "🏝️"
+    },
+    {
+      "id": "s13-tateshina-dragonfly",
+      "title": "指にトンボ",
+      "date": "2026-09-22",
+      "place": "Tateshina",
+      "url": "",
+      "emoji": "🏔️"
+    },
+    {
+      "id": "s14-tateshina-grapes",
+      "title": "ぶどう",
+      "date": "2026-09-22",
+      "place": "Tateshina",
+      "url": "",
+      "emoji": "🏔️"
+    },
+    {
+      "id": "s16-festival-panda",
+      "title": "光るパンダドリンク",
+      "date": "2026-09-27",
+      "place": "Night festival",
+      "url": "",
+      "emoji": "🏮"
+    },
+    {
+      "id": "s17-home-secret-pen",
+      "title": "ひみつのペン",
+      "date": "2026-03-10",
+      "place": "",
+      "url": "",
+      "emoji": "🏠"
+    },
+    {
+      "id": "s18-park-jump",
+      "title": "公園でジャンプ！",
+      "date": "2026-03-15",
+      "place": "Park",
+      "url": "",
+      "emoji": "🌳"
+    },
+    {
+      "id": "s19-corinth-game",
+      "title": "コリントゲーム",
+      "date": "2026-03-22",
+      "place": "School festival",
+      "url": "",
+      "emoji": "🏮"
+    },
+    {
+      "id": "s21-game-corner",
+      "title": "ゲームコーナー",
+      "date": "2026-05-16",
+      "place": "Mall",
+      "url": "",
+      "emoji": "🎮"
+    },
+    {
+      "id": "s22-guinea-pig",
+      "title": "かわいいモルモット",
+      "date": "2026-05-17",
+      "place": "Petting zoo",
+      "url": "",
+      "emoji": "🐹"
+    },
+    {
+      "id": "s23-tateshina-fishing",
+      "title": "つれた！",
+      "date": "2026-08-01",
+      "place": "Tateshina Amusement Aquarium",
+      "url": "",
+      "emoji": "🐟"
+    },
+    {
+      "id": "s24-peach-toy",
+      "title": "ももおもちゃ",
+      "date": "2025-12-16",
+      "place": "",
+      "url": "",
+      "emoji": "🏠"
+    },
+    {
+      "id": "s25-pikachu-donut",
+      "title": "ピカチュウドーナツ",
+      "date": "2025-12-23",
+      "place": "",
+      "url": "",
+      "emoji": "🏠"
+    },
+    {
+      "id": "s26-soup-lunch",
+      "title": "スープのランチ",
+      "date": "2025-12-27",
+      "place": "Restaurant",
+      "url": "",
+      "emoji": "🍽️"
+    },
+    {
+      "id": "s27-arcade-fishing",
+      "title": "ゲームでつり",
+      "date": "2025-12-27",
+      "place": "Arcade",
+      "url": "",
+      "emoji": "🎮"
+    },
+    {
+      "id": "s28-medal-game",
+      "title": "メダルゲーム",
+      "date": "2025-12-27",
+      "place": "Arcade",
+      "url": "",
+      "emoji": "🎮"
+    },
+    {
+      "id": "s29-newyear-dance",
+      "title": "元日にダンス",
+      "date": "2026-01-01",
+      "place": "",
+      "url": "",
+      "emoji": "🏠"
+    },
+    {
+      "id": "s30-kendama",
+      "title": "けん玉、もういっかい！",
+      "date": "2026-03-01",
+      "place": "Park stall",
+      "url": "",
+      "emoji": "🌳"
+    },
+    {
+      "id": "s31-sandwich",
+      "title": "サンドウィッチ作り",
+      "date": "2026-03-08",
+      "place": "",
+      "url": "",
+      "emoji": "🏠"
+    },
+    {
+      "id": "s32-cotton-candy",
+      "title": "わたあめ",
+      "date": "2026-06-05",
+      "place": "Cafe",
+      "url": "",
+      "emoji": "☕"
+    },
+    {
+      "id": "s33-smoothie-drink",
+      "title": "ストローでゴクゴク",
+      "date": "2026-05-25",
+      "place": "Restaurant",
+      "url": "",
+      "emoji": "🍽️"
+    },
+    {
+      "id": "s35-tateshina-koi",
+      "title": "コイにエサやり",
+      "date": "2026-08-01",
+      "place": "Tateshina Amusement Aquarium",
+      "url": "",
+      "emoji": "🐟"
+    },
+    {
+      "id": "s36-tateshina-dig",
+      "title": "なにか みつけた！",
+      "date": "2026-08-01",
+      "place": "Tateshina Amusement Aquarium",
+      "url": "",
+      "emoji": "🐟"
+    },
+    {
+      "id": "s37-tateshina-touch",
+      "title": "さわってもいい？",
+      "date": "2026-08-01",
+      "place": "Tateshina Amusement Aquarium",
+      "url": "",
+      "emoji": "🐟"
+    },
+    {
+      "id": "s38-tateshina-photo",
+      "title": "はい、チーズ！",
+      "date": "2026-08-01",
+      "place": "Tateshina Amusement Aquarium",
+      "url": "",
+      "emoji": "🐟"
     }
   ],
   "cards": [
     {
       "id": "whale-shark",
-      "video": "cebu-2026-08",
+      "video": "s05-cebu-whale",
       "en": "whale shark",
       "kana": "ほえーる しゃーく",
-      "ja": "じんべえざめ",
+      "ja": "ジンベエザメ",
       "zh": "鯨鯊",
       "pinyin": "jīng shā",
       "image": "media/img/whale-shark.jpg",
       "audio": {
         "en": "media/audio/whale-shark.en.mp3",
-        "ja": "media/audio/whale-shark.ja.mp3",
+        "ja": "media/audio/whale-shark.ja.2.mp3",
         "zh": "media/audio/whale-shark.zh.mp3"
       },
-      "at": 5.0,
-      "note": "Look! A whale shark!",
-      "rev": 1
+      "note": "whale（クジラ／鯨 jīng）＋ shark（サメ／鯊 shā）。クジラのように大きいがサメのなかま。世界でいちばん大きい魚。Short #05（セブ・オスロブ）",
+      "rev": 2
     },
     {
       "id": "penguin",
-      "video": "cebu-2026-08",
+      "video": "s11-cebu-penguin",
       "en": "penguin",
       "kana": "ぺんぎん",
       "ja": "ぺんぎん",
@@ -45,13 +316,12 @@
         "ja": "media/audio/penguin.ja.mp3",
         "zh": "media/audio/penguin.zh.mp3"
       },
-      "at": 40.7,
-      "note": "It gave me a hug!",
-      "rev": 1
+      "note": "It gave me a hug! Short #11（ペンギンとハグ）",
+      "rev": 2
     },
     {
       "id": "its-yummy",
-      "video": "cebu-2026-08",
+      "video": "s03-choco-banana",
       "en": "It's yummy!",
       "kana": "いっつ やみー",
       "ja": "おいしい！",
@@ -63,7 +333,568 @@
         "ja": "media/audio/its-yummy.ja.mp3",
         "zh": "media/audio/its-yummy.zh.mp3"
       },
-      "note": "Hungry penguin, hungry!",
+      "note": "おいしいものを食べたときのことば。 Short #03（チョコバナナ）／Short #20（たまごやきとソフトクリーム）",
+      "rev": 2
+    },
+    {
+      "id": "look-its-so-big",
+      "video": "s05-cebu-whale",
+      "en": "Look! It's so big!",
+      "kana": "るっく！ いっつ そう びっぐ！",
+      "ja": "見て！すごく大きい！",
+      "zh": "你看！好大！",
+      "pinyin": "nǐ kàn! hǎo dà!",
+      "image": "media/img/look-its-so-big.jpg",
+      "audio": {
+        "en": "media/audio/look-its-so-big.en.mp3",
+        "ja": "media/audio/look-its-so-big.ja.mp3",
+        "zh": "media/audio/look-its-so-big.zh.mp3"
+      },
+      "note": "とても大きいものを見たときのフレーズ。Look!＝見て！、so big＝すごく大きい。Short #05（ジンベエザメ）",
+      "rev": 1
+    },
+    {
+      "id": "shadow",
+      "video": "s01-kizugawa-shadow",
+      "en": "shadow",
+      "kana": "しゃどう",
+      "ja": "かげ",
+      "zh": "影子",
+      "pinyin": "yǐngzi",
+      "image": "media/img/shadow.jpg",
+      "audio": {
+        "en": "media/audio/shadow.en.mp3",
+        "ja": "media/audio/shadow.ja.mp3",
+        "zh": "media/audio/shadow.zh.mp3"
+      },
+      "note": "光をさえぎるとできる、黒い形。 Short #01（色つきのかげ）",
+      "rev": 1
+    },
+    {
+      "id": "pull",
+      "video": "s02-kizugawa-pull",
+      "en": "Pull!",
+      "kana": "ぷる！",
+      "ja": "ひっぱって！",
+      "zh": "拉！",
+      "pinyin": "lā",
+      "image": "media/img/pull.jpg",
+      "audio": {
+        "en": "media/audio/pull.en.mp3",
+        "ja": "media/audio/pull.ja.mp3",
+        "zh": "media/audio/pull.zh.mp3"
+      },
+      "note": "「ぐいっと引いて！」という意味の短いことば。 Short #02（ロープをひっぱれ！）",
+      "rev": 1
+    },
+    {
+      "id": "sunset",
+      "video": "s04-cebu-sunset",
+      "en": "sunset",
+      "kana": "さんせっと",
+      "ja": "ゆうやけ",
+      "zh": "夕陽",
+      "pinyin": "xīyáng",
+      "image": "media/img/sunset.jpg",
+      "audio": {
+        "en": "media/audio/sunset.en.mp3",
+        "ja": "media/audio/sunset.ja.mp3",
+        "zh": "media/audio/sunset.zh.mp3"
+      },
+      "note": "太陽がしずむときの、空のいろ。 Short #04（飛行機の夕やけ）",
+      "rev": 1
+    },
+    {
+      "id": "cat",
+      "video": "s06-cebu-cat",
+      "en": "cat",
+      "kana": "きゃっと",
+      "ja": "ねこ",
+      "zh": "貓",
+      "pinyin": "māo",
+      "image": "media/img/cat.jpg",
+      "audio": {
+        "en": "media/audio/cat.en.mp3",
+        "ja": "media/audio/cat.ja.mp3",
+        "zh": "media/audio/cat.zh.mp3"
+      },
+      "note": "「にゃー」となく、やわらかい動物。 Short #06（ねこにエサ）",
+      "rev": 1
+    },
+    {
+      "id": "smoke",
+      "video": "s07-cebu-smoke",
+      "en": "smoke",
+      "kana": "すもーく",
+      "ja": "けむり",
+      "zh": "煙",
+      "pinyin": "yān",
+      "image": "media/img/smoke.jpg",
+      "audio": {
+        "en": "media/audio/smoke.en.mp3",
+        "ja": "media/audio/smoke.ja.mp3",
+        "zh": "media/audio/smoke.zh.mp3"
+      },
+      "note": "火や熱いなべから出る、白いもや。 Short #07（けむりの箱）",
+      "rev": 1
+    },
+    {
+      "id": "fire",
+      "video": "s08-cebu-fire",
+      "en": "fire",
+      "kana": "ふぁいやー",
+      "ja": "ひ",
+      "zh": "火",
+      "pinyin": "huǒ",
+      "image": "media/img/fire.jpg",
+      "audio": {
+        "en": "media/audio/fire.en.mp3",
+        "ja": "media/audio/fire.ja.mp3",
+        "zh": "media/audio/fire.zh.mp3"
+      },
+      "note": "あつくて明るい炎。 Short #08（ファイヤーダンス）",
+      "rev": 1
+    },
+    {
+      "id": "french-fries",
+      "video": "s09-cebu-fries",
+      "en": "French fries",
+      "kana": "ふれんち ふらいず",
+      "ja": "フライドポテト",
+      "zh": "薯條",
+      "pinyin": "shǔtiáo",
+      "image": "media/img/french-fries.jpg",
+      "audio": {
+        "en": "media/audio/french-fries.en.mp3",
+        "ja": "media/audio/french-fries.ja.mp3",
+        "zh": "media/audio/french-fries.zh.mp3"
+      },
+      "note": "French（フランスの／法式 fǎshì）＋fries（揚げたもの／炸物 zhá wù）。細長い、揚げたじゃがいも。 Short #09（フライドポテト）",
+      "rev": 1
+    },
+    {
+      "id": "wow",
+      "video": "s10-cebu-fort",
+      "en": "Wow!",
+      "kana": "わお！",
+      "ja": "わあ！",
+      "zh": "哇！",
+      "pinyin": "wā",
+      "image": "media/img/wow.jpg",
+      "audio": {
+        "en": "media/audio/wow.en.mp3",
+        "ja": "media/audio/wow.ja.mp3",
+        "zh": "media/audio/wow.zh.mp3"
+      },
+      "note": "びっくりしたとき・すごいと思ったときに言うことば。 Short #10（とりでだ！）／Short #15（手持ち花火）",
+      "rev": 1
+    },
+    {
+      "id": "cake",
+      "video": "s12-cebu-cake",
+      "en": "cake",
+      "kana": "けーき",
+      "ja": "ケーキ",
+      "zh": "蛋糕",
+      "pinyin": "dàngāo",
+      "image": "media/img/cake.jpg",
+      "audio": {
+        "en": "media/audio/cake.en.mp3",
+        "ja": "media/audio/cake.ja.mp3",
+        "zh": "media/audio/cake.zh.mp3"
+      },
+      "note": "あまくて、クリームがのっていることが多いお菓子。 Short #12（オレオケーキ）",
+      "rev": 1
+    },
+    {
+      "id": "dragonfly",
+      "video": "s13-tateshina-dragonfly",
+      "en": "dragonfly",
+      "kana": "どらごんふらい",
+      "ja": "トンボ",
+      "zh": "蜻蜓",
+      "pinyin": "qīngtíng",
+      "image": "media/img/dragonfly.jpg",
+      "audio": {
+        "en": "media/audio/dragonfly.en.mp3",
+        "ja": "media/audio/dragonfly.ja.mp3",
+        "zh": "media/audio/dragonfly.zh.mp3"
+      },
+      "note": "細長い羽で、空中にとまれる虫。 Short #13（指にトンボ）",
+      "rev": 1
+    },
+    {
+      "id": "grapes",
+      "video": "s14-tateshina-grapes",
+      "en": "grapes",
+      "kana": "ぐれいぷす",
+      "ja": "ぶどう",
+      "zh": "葡萄",
+      "pinyin": "pútao",
+      "image": "media/img/grapes.jpg",
+      "audio": {
+        "en": "media/audio/grapes.en.mp3",
+        "ja": "media/audio/grapes.ja.mp3",
+        "zh": "media/audio/grapes.zh.mp3"
+      },
+      "note": "小さなまるい実が、房になってなる果物。 Short #14（ぶどう）",
+      "rev": 1
+    },
+    {
+      "id": "panda",
+      "video": "s16-festival-panda",
+      "en": "panda",
+      "kana": "ぱんだ",
+      "ja": "パンダ",
+      "zh": "熊貓",
+      "pinyin": "xióngmāo",
+      "image": "media/img/panda.jpg",
+      "audio": {
+        "en": "media/audio/panda.en.mp3",
+        "ja": "media/audio/panda.ja.mp3",
+        "zh": "media/audio/panda.zh.mp3"
+      },
+      "note": "白と黒のクマ。中国にいるよ。 Short #16（光るパンダドリンク）",
+      "rev": 1
+    },
+    {
+      "id": "look",
+      "video": "s17-home-secret-pen",
+      "en": "Look!",
+      "kana": "るっく！",
+      "ja": "みて！",
+      "zh": "你看！",
+      "pinyin": "nǐ kàn",
+      "image": "media/img/look.jpg",
+      "audio": {
+        "en": "media/audio/look.en.mp3",
+        "ja": "media/audio/look.ja.mp3",
+        "zh": "media/audio/look.zh.mp3"
+      },
+      "note": "すごいものを見せたいときに言うことば。 Short #17（ひみつのペン）／Short #34（みて！てんじ）",
+      "rev": 1
+    },
+    {
+      "id": "jump",
+      "video": "s18-park-jump",
+      "en": "Jump!",
+      "kana": "じゃんぷ！",
+      "ja": "ジャンプ！",
+      "zh": "跳！",
+      "pinyin": "tiào",
+      "image": "media/img/jump.jpg",
+      "audio": {
+        "en": "media/audio/jump.en.mp3",
+        "ja": "media/audio/jump.ja.mp3",
+        "zh": "media/audio/jump.zh.mp3"
+      },
+      "note": "地面をけって、とびあがること。 Short #18（公園でジャンプ！）",
+      "rev": 1
+    },
+    {
+      "id": "i-did-it",
+      "video": "s19-corinth-game",
+      "en": "I did it!",
+      "kana": "あい でぃっど いっと！",
+      "ja": "できた！",
+      "zh": "我做到了！",
+      "pinyin": "wǒ zuò dào le",
+      "image": "media/img/i-did-it.jpg",
+      "audio": {
+        "en": "media/audio/i-did-it.en.mp3",
+        "ja": "media/audio/i-did-it.ja.mp3",
+        "zh": "media/audio/i-did-it.zh.mp3"
+      },
+      "note": "うまくいったときに言うことば。 Short #19（コリントゲーム）",
+      "rev": 1
+    },
+    {
+      "id": "lets-go",
+      "video": "s21-game-corner",
+      "en": "Let's go!",
+      "kana": "れっつ ごー！",
+      "ja": "いこう！",
+      "zh": "走吧！",
+      "pinyin": "zǒu ba",
+      "image": "media/img/lets-go.jpg",
+      "audio": {
+        "en": "media/audio/lets-go.en.mp3",
+        "ja": "media/audio/lets-go.ja.mp3",
+        "zh": "media/audio/lets-go.zh.mp3"
+      },
+      "note": "いっしょに動き出したいときに言うことば。 Short #21（ゲームコーナー）",
+      "rev": 1
+    },
+    {
+      "id": "so-cute",
+      "video": "s22-guinea-pig",
+      "en": "So cute!",
+      "kana": "そー きゅーと！",
+      "ja": "かわいい！",
+      "zh": "好可愛！",
+      "pinyin": "hǎo kě'ài",
+      "image": "media/img/so-cute.jpg",
+      "audio": {
+        "en": "media/audio/so-cute.en.mp3",
+        "ja": "media/audio/so-cute.ja.mp3",
+        "zh": "media/audio/so-cute.zh.mp3"
+      },
+      "note": "とてもかわいいときに言うことば。 Short #22（かわいいモルモット）",
+      "rev": 1
+    },
+    {
+      "id": "i-caught-one",
+      "video": "s23-tateshina-fishing",
+      "en": "I caught one!",
+      "kana": "あい こーと わん！",
+      "ja": "つれた！",
+      "zh": "釣到了！",
+      "pinyin": "diào dào le",
+      "image": "media/img/i-caught-one.jpg",
+      "audio": {
+        "en": "media/audio/i-caught-one.en.mp3",
+        "ja": "media/audio/i-caught-one.ja.mp3",
+        "zh": "media/audio/i-caught-one.zh.mp3"
+      },
+      "note": "魚（やおもちゃ）がつれたときのことば。 Short #23（つれた！）",
+      "rev": 1
+    },
+    {
+      "id": "peach",
+      "video": "s24-peach-toy",
+      "en": "peach",
+      "kana": "ぴーち",
+      "ja": "もも",
+      "zh": "桃子",
+      "pinyin": "táozi",
+      "image": "media/img/peach.jpg",
+      "audio": {
+        "en": "media/audio/peach.en.mp3",
+        "ja": "media/audio/peach.ja.mp3",
+        "zh": "media/audio/peach.zh.mp3"
+      },
+      "note": "やわらかくてあまい、毛のある果物。 Short #24（ももおもちゃ）",
+      "rev": 1
+    },
+    {
+      "id": "donut",
+      "video": "s25-pikachu-donut",
+      "en": "donut",
+      "kana": "どーなつ",
+      "ja": "ドーナツ",
+      "zh": "甜甜圈",
+      "pinyin": "tiántiánquān",
+      "image": "media/img/donut.jpg",
+      "audio": {
+        "en": "media/audio/donut.en.mp3",
+        "ja": "media/audio/donut.ja.mp3",
+        "zh": "media/audio/donut.zh.mp3"
+      },
+      "note": "まるい、あまい揚げ菓子。穴があいていることが多い。 Short #25（ピカチュウドーナツ）",
+      "rev": 1
+    },
+    {
+      "id": "soup",
+      "video": "s26-soup-lunch",
+      "en": "soup",
+      "kana": "すーぷ",
+      "ja": "スープ",
+      "zh": "湯",
+      "pinyin": "tāng",
+      "image": "media/img/soup.jpg",
+      "audio": {
+        "en": "media/audio/soup.en.mp3",
+        "ja": "media/audio/soup.ja.mp3",
+        "zh": "media/audio/soup.zh.mp3"
+      },
+      "note": "スプーンですくって食べる、あたたかい食べ物。 Short #26（スープのランチ）",
+      "rev": 1
+    },
+    {
+      "id": "catch-it",
+      "video": "s27-arcade-fishing",
+      "en": "Catch it!",
+      "kana": "きゃっち いっと！",
+      "ja": "つかまえて！",
+      "zh": "抓住它！",
+      "pinyin": "zhuā zhù tā",
+      "image": "media/img/catch-it.jpg",
+      "audio": {
+        "en": "media/audio/catch-it.en.mp3",
+        "ja": "media/audio/catch-it.ja.mp3",
+        "zh": "media/audio/catch-it.zh.mp3"
+      },
+      "note": "つかまえる・引っかけるときに言うことば。 Short #27（ゲームでつり）",
+      "rev": 1
+    },
+    {
+      "id": "my-turn",
+      "video": "s28-medal-game",
+      "en": "My turn!",
+      "kana": "まい たーん！",
+      "ja": "わたしの ばん！",
+      "zh": "輪到我了！",
+      "pinyin": "lún dào wǒ le",
+      "image": "media/img/my-turn.jpg",
+      "audio": {
+        "en": "media/audio/my-turn.en.mp3",
+        "ja": "media/audio/my-turn.ja.mp3",
+        "zh": "media/audio/my-turn.zh.mp3"
+      },
+      "note": "自分の順番が来たときに言うことば。 Short #28（メダルゲーム）",
+      "rev": 1
+    },
+    {
+      "id": "happy-new-year",
+      "video": "s29-newyear-dance",
+      "en": "Happy New Year!",
+      "kana": "はっぴー にゅー いやー！",
+      "ja": "あけおめ！",
+      "zh": "新年快樂！",
+      "pinyin": "xīnnián kuàilè",
+      "image": "media/img/happy-new-year.jpg",
+      "audio": {
+        "en": "media/audio/happy-new-year.en.mp3",
+        "ja": "media/audio/happy-new-year.ja.mp3",
+        "zh": "media/audio/happy-new-year.zh.mp3"
+      },
+      "note": "一年の初めのあいさつ。 Short #29（元日にダンス）",
+      "rev": 1
+    },
+    {
+      "id": "try-again",
+      "video": "s30-kendama",
+      "en": "Try again!",
+      "kana": "とらい あげん！",
+      "ja": "もういっかい！",
+      "zh": "再試一次！",
+      "pinyin": "zài shì yī cì",
+      "image": "media/img/try-again.jpg",
+      "audio": {
+        "en": "media/audio/try-again.en.mp3",
+        "ja": "media/audio/try-again.ja.mp3",
+        "zh": "media/audio/try-again.zh.mp3"
+      },
+      "note": "もう一度やってみるときに言うことば。 Short #30（けん玉、もういっかい！）",
+      "rev": 1
+    },
+    {
+      "id": "sandwich",
+      "video": "s31-sandwich",
+      "en": "sandwich",
+      "kana": "さんどうぃっち",
+      "ja": "サンドウィッチ",
+      "zh": "三明治",
+      "pinyin": "sānmíngzhì",
+      "image": "media/img/sandwich.jpg",
+      "audio": {
+        "en": "media/audio/sandwich.en.mp3",
+        "ja": "media/audio/sandwich.ja.mp3",
+        "zh": "media/audio/sandwich.zh.mp3"
+      },
+      "note": "パンではさんだ食べ物。 Short #31（サンドウィッチ作り）",
+      "rev": 1
+    },
+    {
+      "id": "cotton-candy",
+      "video": "s32-cotton-candy",
+      "en": "cotton candy",
+      "kana": "こっとん きゃんでぃー",
+      "ja": "わたあめ",
+      "zh": "棉花糖",
+      "pinyin": "miánhuātáng",
+      "image": "media/img/cotton-candy.jpg",
+      "audio": {
+        "en": "media/audio/cotton-candy.en.mp3",
+        "ja": "media/audio/cotton-candy.ja.mp3",
+        "zh": "media/audio/cotton-candy.zh.mp3"
+      },
+      "note": "cotton（わた／棉花 miánhuā）＋candy（あめ／糖果 tángguǒ）。雲みたいにふわふわのあまいお菓子。 Short #32（わたあめ）",
+      "rev": 1
+    },
+    {
+      "id": "drink",
+      "video": "s33-smoothie-drink",
+      "en": "drink",
+      "kana": "どりんく",
+      "ja": "のみもの",
+      "zh": "飲料",
+      "pinyin": "yǐnliào",
+      "image": "media/img/drink.jpg",
+      "audio": {
+        "en": "media/audio/drink.en.mp3",
+        "ja": "media/audio/drink.ja.mp3",
+        "zh": "media/audio/drink.zh.mp3"
+      },
+      "note": "ジュースや水など、飲むもの。 Short #33（ストローでゴクゴク）",
+      "rev": 1
+    },
+    {
+      "id": "here-you-go",
+      "video": "s35-tateshina-koi",
+      "en": "Here you go!",
+      "kana": "ひあ ゆー ごー！",
+      "ja": "はい、どうぞ！",
+      "zh": "給你！",
+      "pinyin": "gěi nǐ",
+      "image": "media/img/here-you-go.jpg",
+      "audio": {
+        "en": "media/audio/here-you-go.en.mp3",
+        "ja": "media/audio/here-you-go.ja.mp3",
+        "zh": "media/audio/here-you-go.zh.mp3"
+      },
+      "note": "ものをわたすときのことば。 Short #35（コイにエサやり）",
+      "rev": 1
+    },
+    {
+      "id": "i-found-it",
+      "video": "s36-tateshina-dig",
+      "en": "I found it!",
+      "kana": "あい ふぁうんど いっと！",
+      "ja": "みつけた！",
+      "zh": "找到了！",
+      "pinyin": "zhǎo dào le",
+      "image": "media/img/i-found-it.jpg",
+      "audio": {
+        "en": "media/audio/i-found-it.en.mp3",
+        "ja": "media/audio/i-found-it.ja.mp3",
+        "zh": "media/audio/i-found-it.zh.mp3"
+      },
+      "note": "さがしていたものが見つかったときのことば。 Short #36（なにか みつけた！）",
+      "rev": 1
+    },
+    {
+      "id": "can-i-touch-it",
+      "video": "s37-tateshina-touch",
+      "en": "Can I touch it?",
+      "kana": "きゃん あい たっち いっと？",
+      "ja": "さわっても いい？",
+      "zh": "可以摸嗎？",
+      "pinyin": "kěyǐ mō ma",
+      "image": "media/img/can-i-touch-it.jpg",
+      "audio": {
+        "en": "media/audio/can-i-touch-it.en.mp3",
+        "ja": "media/audio/can-i-touch-it.ja.mp3",
+        "zh": "media/audio/can-i-touch-it.zh.mp3"
+      },
+      "note": "さわる前に聞くことば。 Short #37（さわってもいい？）",
+      "rev": 1
+    },
+    {
+      "id": "say-cheese",
+      "video": "s38-tateshina-photo",
+      "en": "Say cheese!",
+      "kana": "せい ちーず！",
+      "ja": "はい、チーズ！",
+      "zh": "笑一個！",
+      "pinyin": "xiào yí ge",
+      "image": "media/img/say-cheese.jpg",
+      "audio": {
+        "en": "media/audio/say-cheese.en.mp3",
+        "ja": "media/audio/say-cheese.ja.mp3",
+        "zh": "media/audio/say-cheese.zh.mp3"
+      },
+      "note": "写真をとるときのかけ声。 Short #38（はい、チーズ！）",
       "rev": 1
     }
   ]

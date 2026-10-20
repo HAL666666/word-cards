@@ -14,7 +14,7 @@
 - 発音：付属カードは mp3（edge-tts：en-US-AnaNeural / ja-JP-NanamiNeural / zh-TW-HsiaoChenNeural）。自分で作ったカードは Web Speech API（端末の声）
 
 ## カードの追加（リポジトリ経由）
-1. 写真を `media/img/<id>.jpg`（正方形・640px くらい。家族以外の顔・個人情報なし）に置く
+1. 写真を `media/img/<id>.jpg`（正方形・800px くらい・JPEG 圧縮。Short の mosaic 済み動画のフレームか thumb.jpg から。家族以外の顔・個人情報なし）に置く
 2. `cards.json` の `cards` に追記（同じビデオなら `videos` も）
 3. `python3 tools/gen-audio.py` で `media/audio/<id>.<en|ja|zh>.mp3` を作る（cards.json の audio も自動で埋まる）
 4. `npm test`（ファイルの存在・形式チェック）→ commit & push

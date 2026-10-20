@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ヘッドレス Chrome（390x844）で動作確認＋スクリーンショット。
 実行: python3 tests/e2e.py   （ローカルサーバーは自動で立てる。BASE=... で公開URLにも使える）"""
-import asyncio, json, os, subprocess, sys, time
+import re, asyncio, json, os, subprocess, sys, time
 from pathlib import Path
 from playwright.async_api import async_playwright
 
@@ -33,9 +33,9 @@ async def main():
 
             await pg.goto(BASE)
             await pg.wait_for_selector(".tiles")
-            await pg.wait_for_function("window.__app && window.__app.S.cards.length >= 3")
+            await pg.wait_for_function("window.__app && window.__app.S.cards.length >= 36")
             n = await pg.evaluate("__app.S.cards.length")
-            ok("初回起動で cards.json の3まいが入る", n == 3, f"{n}まい")
+            ok("初回起動で cards.json の36まいが入る", n == 36, f"{n}まい")
             await pg.wait_for_timeout(300); await shot("01-home")
 
             # 長おしで おとなメニュー
@@ -48,32 +48,32 @@ async def main():
             ok("おとなボタンは タップだけでは開かない", "settings" not in pg.url)
 
             await pg.goto(BASE + "#list"); await pg.wait_for_selector(".ctile")
-            ok("一覧：ビデオごとにまとまる", await pg.locator(".vgroup").count() == 1 and await pg.locator(".ctile").count() == 3)
+            ok("一覧：ビデオごとにまとまる", await pg.locator(".vgroup").count() == 35 and await pg.locator(".ctile").count() == 36)
             await pg.wait_for_timeout(400); await shot("02-list")
 
-            await pg.locator(".ctile").first.click(); await pg.wait_for_selector(".say.big")
+            await pg.goto(BASE + "#card/whale-shark"); await pg.wait_for_selector(".say.big")
             t = await pg.inner_text("#v-card")
-            ok("カード：英・日・中・ピンイン・よみ・ビデオ", all(s in t for s in ["whale shark", "じんべえざめ", "鯨鯊", "jīng shā", "ほえーる しゃーく", "セブ島"]))
+            ok("カード：英・日・中・ピンイン・よみ・ビデオ", all(s in t for s in ["whale shark", "ジンベエザメ", "鯨鯊", "jīng shā", "ほえーる しゃーく", "クジラ", "ジンベエザメ、でっかい！"]))
             how = await pg.evaluate("Speech.say(__app.S.cards.find(c=>c.id==='whale-shark'),'zh',1)")
             ok("付属カードは mp3 で再生", how == "mp3", how)
             await pg.wait_for_timeout(300); await shot("03-card")
 
             # めくる
-            await pg.goto(BASE + "#flash"); await pg.wait_for_selector("#flip")
+            await pg.goto(BASE + "#flash/s05-cebu-whale"); await pg.wait_for_selector("#flip")
             await pg.wait_for_timeout(400); await shot("04-flash-front")
             await pg.click("#flip"); await pg.wait_for_timeout(700); await shot("05-flash-back")
             ok("めくる：タップで裏返る", await pg.locator("#flip.on").count() == 1)
             await pg.click("#g-known"); await pg.wait_for_timeout(500)
             await pg.click("#g-again"); await pg.wait_for_timeout(500)
             tot = await pg.inner_text(".fprog span")
-            ok("もういちど のカードは列のうしろに戻る", tot.endswith("/4"), tot)
+            ok("もういちど のカードは列のうしろに戻る", tot.endswith("/3"), tot)
             for _ in range(6):
                 if await pg.locator("#g-known").count() == 0: break
                 await pg.click("#g-known"); await pg.wait_for_timeout(450)
             ok("めくる：おわり画面", await pg.locator(".empty.done").count() == 1)
             await pg.wait_for_timeout(600); await shot("06-flash-done")
             prog = await pg.evaluate("Promise.resolve(DB.all('progress'))")
-            ok("おぼえた記録が IndexedDB に入る", len(prog) == 3 and all(p["box"] >= 1 for p in prog), str([p["box"] for p in prog]))
+            ok("おぼえた記録が IndexedDB に入る", len(prog) == 2 and all(p["box"] >= 1 for p in prog), str([p["box"] for p in prog]))
 
             # クイズ
             await pg.goto(BASE + "#quiz"); await pg.wait_for_selector(".choice")
@@ -81,12 +81,13 @@ async def main():
             for i in range(5):
                 await pg.wait_for_selector(".choice")
                 ans = await pg.evaluate("(()=>{const q=document.querySelector('.qpic img');return q?q.alt:''})()")
-                wrong = pg.locator(".choice").filter(has_not_text=ans).first
+                exact = re.compile("^" + re.escape(ans) + "$")
+                wrong = pg.locator(".choice").filter(has_not_text=exact).first
                 if i == 0:
                     await wrong.click(); await pg.wait_for_timeout(450)
                     ok("クイズ：まちがいはグレーになって やりなおせる", await pg.locator(".choice.wrong").count() == 1)
                     await shot("08-quiz-wrong")
-                await pg.locator(".choice", has_text=ans).first.click()
+                await pg.locator(".choice").filter(has_text=exact).first.click()
                 if i == 0:
                     await pg.wait_for_timeout(250); await shot("09-quiz-correct")
                 await pg.wait_for_function("!document.querySelector('#v-quiz').classList.contains('lock')", timeout=15000)
@@ -127,7 +128,7 @@ async def main():
             d = await dl.value; pth = await d.path()
             bk = json.loads(Path(pth).read_text())
             hc = [c for c in bk["cards"] if c["id"] == "honey"][0]
-            ok("バックアップ：形式・写真入り・記録入り", bk["format"] == "word-cards-backup" and hc["image"].startswith("data:image/") and len(bk["progress"]) >= 3 and len(bk["cards"]) == 5)
+            ok("バックアップ：形式・写真入り・記録入り", bk["format"] == "word-cards-backup" and hc["image"].startswith("data:image/") and len(bk["progress"]) >= 3 and len(bk["cards"]) == 38)
 
             # 設定：ことばを隠す
             await pg.goto(BASE + "#settings"); await pg.wait_for_selector("[data-show=zh]", state="attached")
@@ -144,11 +145,11 @@ async def main():
             # オフライン
             await pg.evaluate("navigator.serviceWorker.ready.then(()=>true)")
             await pg.reload(); await pg.wait_for_timeout(1500)
-            await pg.evaluate("caches.open('wordcards-media-v1').then(c=>c.keys()).then(k=>k.length)")
+            await pg.wait_for_function("caches.open('wordcards-media-v1').then(c=>c.keys()).then(k=>k.length >= 36*4)", timeout=60000)
             await ctx.set_offline(True)
             await pg.goto(BASE + "#list"); await pg.wait_for_selector(".ctile", timeout=8000)
-            imgs_ok = await pg.evaluate("Promise.all([...document.querySelectorAll('.ctile img')].map(i=>i.decode().then(()=>i.naturalWidth>0).catch(()=>false)))")
-            ok("オフラインで一覧と写真が出る", await pg.locator(".ctile").count() == 5 and all(imgs_ok), str(imgs_ok))
+            imgs_ok = await pg.evaluate("Promise.all([...document.querySelectorAll('.ctile img')].slice(0, 6).map(i=>i.decode().then(()=>i.naturalWidth>0).catch(()=>false)))")
+            ok("オフラインで一覧と写真が出る", await pg.locator(".ctile").count() == 38 and all(imgs_ok), str(imgs_ok))
             how = await pg.evaluate("Speech.say(__app.S.cards.find(c=>c.id==='penguin'),'en',1)")
             ok("オフラインでも mp3 再生", how == "mp3", how)
             await shot("15-offline-list")

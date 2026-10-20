@@ -11,7 +11,8 @@ test('cards.json は正しい形で、画像・音声ファイルが全部ある
   assert.equal(raw.format, 'word-cards');
   const r = WC.parseCardsFile(raw);
   assert.deepEqual(r.errors, []);
-  assert.ok(r.cards.length >= 3);
+  assert.equal(r.cards.length, 36);
+  assert.equal(r.videos.length, 35);
   const vids = new Set(r.videos.map((v) => v.id));
   for (const c of r.cards) {
     assert.ok(vids.has(c.video), `${c.id}: video ${c.video} が videos にない`);
@@ -24,7 +25,16 @@ test('cards.json は正しい形で、画像・音声ファイルが全部ある
     assert.ok(c.kana && /^[\u3040-\u309f\u30fc\s！!？?]+$/.test(c.kana), `${c.id}: kana はひらがな`);
     assert.ok(c.pinyin, `${c.id}: pinyin`);
   }
-  assert.deepEqual(r.cards.map((c) => c.en), ['whale shark', 'penguin', "It's yummy!"]);
+  assert.deepEqual(r.cards.slice(0, 3).map((c) => c.en), ['whale shark', 'penguin', "It's yummy!"]);
+  assert.equal(new Set(r.cards.map((c) => c.id)).size, 36);
+  for (const v of r.videos) {
+    assert.equal(v.url, '', `${v.id}: まだ公開していないので url は空`);
+    assert.ok(!/itabashi|toda|warabi|板橋|戸田|蕨/i.test(JSON.stringify(v)), `${v.id}: 地名`);
+  }
+  const ws = r.cards.find((c) => c.id === 'whale-shark');
+  assert.ok(ws.rev >= 2 && /クジラ/.test(ws.note) && /サメ/.test(ws.note), 'whale shark の分解');
+  assert.equal(r.videos.find((v) => v.id === ws.video).date, '2026-08-23');
+  assert.equal(r.videos.find((v) => v.id === r.cards.find((c) => c.id === 'penguin').video).date, '2026-08-25');
 });
 
 test('parseCardsFile: 配列・バックアップ・こわれたJSON', () => {

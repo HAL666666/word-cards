@@ -1,7 +1,7 @@
 /* ことばアルバム — 画面とうごき */
 (function () {
   'use strict';
-  const APP_VERSION = '1.1.0';
+  const APP_VERSION = '1.2.0';
   const MEDIA_CACHE = 'wordcards-media-v1';
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
@@ -193,7 +193,7 @@
       <div class="row center"><a class="btn" href="#flash/${encodeURIComponent(c.video || '-')}">🃏 めくる</a><button class="hold btn ghost" data-href="#edit/${encodeURIComponent(c.id)}"><span class="ring"></span>✏️ なおす</button></div>`;
     bindSay($('#v-card'), c);
     bindHold($('#v-card'));
-    const n = $('#note-say'); if (n) n.addEventListener('click', () => { Speech.stop(); Speech.tts(c.note, 'en', S.settings.rate); });
+    const n = $('#note-say'); if (n) n.addEventListener('click', () => { Speech.stop(); const t = c.note.replace(/\s*Short\s*#\d+[\s\S]*$/, '') || c.note; Speech.tts(t, /[\u3040-\u30ff\u3400-\u9fff]/.test(t) ? 'ja' : 'en', S.settings.rate); });
     if (S.settings.autoplay) say(c, 'en');
   }
 
