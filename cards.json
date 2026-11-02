@@ -1,7 +1,7 @@
 {
   "format": "word-cards",
   "version": 1,
-  "updated": "2026-10-21",
+  "updated": "2026-11-02",
   "videos": [
     {
       "id": "s01-kizugawa-shadow",
@@ -431,6 +431,24 @@
         "zh": "media/audio/shadow.zh.mp3"
       },
       "note": "光をさえぎるとできる、黒い形。 Short #01（色つきのかげ）",
+      "rev": 1
+    },
+    {
+      "id": "darkness",
+      "video": "s01-kizugawa-shadow",
+      "at": 19.3,
+      "en": "darkness",
+      "kana": "だーくねす",
+      "ja": "くらやみ",
+      "zh": "黑暗",
+      "pinyin": "hēi'àn",
+      "image": "media/img/darkness.jpg",
+      "audio": {
+        "en": "media/audio/darkness.en.mp3",
+        "ja": "media/audio/darkness.ja.mp3",
+        "zh": "media/audio/darkness.zh.mp3"
+      },
+      "note": "ひかりが なくて、なにも みえない こと。この トンネルは まっくらやみ だったよ！ Short #01（色つきのかげ）",
       "rev": 1
     },
     {

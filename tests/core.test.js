@@ -11,7 +11,7 @@ test('cards.json は正しい形で、画像・音声ファイルが全部ある
   assert.equal(raw.format, 'word-cards');
   const r = WC.parseCardsFile(raw);
   assert.deepEqual(r.errors, []);
-  assert.equal(r.cards.length, 39);
+  assert.equal(r.cards.length, 40);
   assert.equal(r.videos.length, 36);
   const vids = new Set(r.videos.map((v) => v.id));
   for (const c of r.cards) {
@@ -26,7 +26,7 @@ test('cards.json は正しい形で、画像・音声ファイルが全部ある
     assert.ok(c.pinyin, `${c.id}: pinyin`);
   }
   assert.deepEqual(r.cards.slice(0, 3).map((c) => c.en), ['whale shark', 'penguin', "It's yummy!"]);
-  assert.equal(new Set(r.cards.map((c) => c.id)).size, 39);
+  assert.equal(new Set(r.cards.map((c) => c.id)).size, 40);
   for (const v of r.videos) {
     assert.equal(v.url, '', `${v.id}: まだ公開していないので url は空`);
     assert.ok(!/itabashi|toda|warabi|板橋|戸田|蕨/i.test(JSON.stringify(v)), `${v.id}: 地名`);
